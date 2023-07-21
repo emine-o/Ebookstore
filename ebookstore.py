@@ -85,6 +85,7 @@ Select one of the following options:
 2. Update book
 3. Delete book
 4. Search book
+5. List all books
 0. Exit
 ''')
     
@@ -424,6 +425,18 @@ Quantity: {3}'''.format(row[0], row[1], row[2], row[3]))
             # Execute if the user wants to go back to main menu.
             else:
                 menu_option = False
+    
+    # Execute if user choice is "List all books".
+    elif menu == "5":
+        cursor.execute("""SELECT * FROM book""")
+        for row in cursor.fetchall():
+            print('''
+ID: {0}
+Title: {1}
+Author: {2}
+Quantity: {3}'''.format(row[0], row[1], row[2], row[3]))
+
+        db.commit()
 
     # Execute if user choice is "Exit".
     elif menu == "0":
