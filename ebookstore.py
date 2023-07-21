@@ -10,44 +10,44 @@ cursor.execute("""CREATE TABLE book
 db.commit
 
 #Store the details of the books in variables.
-id1 = 3001
-title1 = "A Tale of Two Cities"
-author1 = "Charles Dickens"
-qty1 = 30
+id_1 = 3001
+title_1 = "A Tale of Two Cities"
+author_1 = "Charles Dickens"
+qty_1 = 30
 
-id2 = 3002
-title2 = "Harry Potter and the Philosopher's Stone"
-author2 = "J.K. Rowling"
-qty2 = 40
+id_2 = 3002
+title_2 = "Harry Potter and the Philosopher's Stone"
+author_2 = "J.K. Rowling"
+qty_2 = 40
 
-id3 = 3003
-title3 = "The Lion, the Witch and the Wardrobe"
-author3 = "C. S. Lewis"
-qty3 = 25
+id_3 = 3003
+title_3 = "The Lion, the Witch and the Wardrobe"
+author_3 = "C. S. Lewis"
+qty_3 = 25
 
-id4 = 3004
-title4 = "The Lord of the Rings"
-author4 = "J.R.R Tolkien"
-qty4 = 37
+id_4 = 3004
+title_4 = "The Lord of the Rings"
+author_4 = "J.R.R Tolkien"
+qty_4 = 37
 
-id5 = 3005
-title5 = "Alice in Wonderland"
-author5 = "Lewis Carroll"
-qty5 = 12
+id_5 = 3005
+title_5 = "Alice in Wonderland"
+author_5 = "Lewis Carroll"
+qty_5 = 12
 
-id6 = 3006
-title6 = "Oliver Twist"
-author6 = "Charles Dickens"
-qty6 = 23
+id_6 = 3006
+title_6 = "Oliver Twist"
+author_6 = "Charles Dickens"
+qty_6 = 23
 
 # Create a list consisting of book details.
 # Capitalize each word of the titles and authors to get standart looking for each text.
-books = [(id1, string.capwords(title1).strip(), string.capwords(author1).strip(), qty1),
-         (id2, string.capwords(title2).strip(), string.capwords(author2).strip(), qty2),
-         (id3, string.capwords(title3).strip(), string.capwords(author3).strip(), qty3),
-         (id4, string.capwords(title4).strip(), string.capwords(author4).strip(), qty4),
-         (id5, string.capwords(title5).strip(), string.capwords(author5).strip(), qty5),
-         (id6, string.capwords(title6).strip(), string.capwords(author6).strip(), qty6)]
+books = [(id_1, string.capwords(title_1).strip(), string.capwords(author_1).strip(), qty_1),
+         (id_2, string.capwords(title_2).strip(), string.capwords(author_2).strip(), qty_2),
+         (id_3, string.capwords(title_3).strip(), string.capwords(author_3).strip(), qty_3),
+         (id_4, string.capwords(title_4).strip(), string.capwords(author_4).strip(), qty_4),
+         (id_5, string.capwords(title_5).strip(), string.capwords(author_5).strip(), qty_5),
+         (id_6, string.capwords(title_6).strip(), string.capwords(author_6).strip(), qty_6)]
 
 # Insert book details into table "book".
 cursor.executemany("""INSERT INTO book VALUES(?, ?, ?, ?)""", books)
